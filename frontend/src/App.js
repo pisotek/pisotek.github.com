@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import { ScrollToTop } from "./components/ScrollToTop";
 import { HomePage } from "./pages/HomePage";
 import { CertificationsPage } from "./pages/CertificationsPage";
 import { ContactPage } from "./pages/ContactPage";
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="App min-h-screen bg-[#0A0A0A]">
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
