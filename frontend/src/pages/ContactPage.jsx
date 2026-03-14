@@ -2,14 +2,21 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Linkedin, Mail, MapPin, Send } from 'lucide-react';
 import { toast } from 'sonner';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '../components/ui/select';
 
 const eventTypes = [
-  'Private Party',
-  'Corporate Event',
-  'Wedding',
-  'Product Launch',
-  'Brand Collaboration',
-  'Other'
+  { value: 'private-party', label: 'Private Party' },
+  { value: 'corporate-event', label: 'Corporate Event' },
+  { value: 'wedding', label: 'Wedding' },
+  { value: 'product-launch', label: 'Product Launch' },
+  { value: 'brand-collaboration', label: 'Brand Collaboration' },
+  { value: 'other', label: 'Other' }
 ];
 
 export const ContactPage = () => {
@@ -19,16 +26,15 @@ export const ContactPage = () => {
     eventType: '',
     message: ''
   });
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleEventTypeSelect = (type) => {
-    setFormData(prev => ({ ...prev, eventType: type }));
-    setIsDropdownOpen(false);
+  const handleEventTypeChange = (value) => {
+    const selectedEvent = eventTypes.find(e => e.value === value);
+    setFormData(prev => ({ ...prev, eventType: selectedEvent?.label || '' }));
   };
 
   const handleSubmit = (e) => {
@@ -132,50 +138,32 @@ export const ContactPage = () => {
                   />
                 </div>
 
-                {/* Event Type Dropdown */}
-                <div className="relative">
+                {/* Event Type Dropdown - Using Shadcn Select */}
+                <div>
                   <label className="label-elegant">Event Type</label>
-                  <button
-                    type="button"
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className="input-elegant text-left cursor-pointer flex items-center justify-between"
-                    data-testid="dropdown-event-type"
-                  >
-                    <span className={formData.eventType ? 'text-[#EDEDED]' : 'text-[#666666]'}>
-                      {formData.eventType || 'Select event type'}
-                    </span>
-                    <svg
-                      className={`w-4 h-4 text-[#D4AF37] transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  <Select onValueChange={handleEventTypeChange} data-testid="dropdown-event-type">
+                    <SelectTrigger 
+                      className="w-full h-auto py-4 px-0 bg-transparent border-0 border-b border-[#333] rounded-none text-base text-[#EDEDED] hover:border-[#D4AF37] focus:border-[#D4AF37] focus:ring-0 transition-colors"
+                      data-testid="select-trigger"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  
-                  {/* Dropdown Menu */}
-                  {isDropdownOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className="absolute z-20 w-full mt-2 py-2 bg-[#1A1A1A] border border-[#333] shadow-xl"
-                      data-testid="dropdown-menu"
+                      <SelectValue placeholder="Select event type" className="text-[#666666]" />
+                    </SelectTrigger>
+                    <SelectContent 
+                      className="bg-[#1A1A1A] border border-[#333] rounded-none shadow-xl"
+                      data-testid="select-content"
                     >
                       {eventTypes.map((type) => (
-                        <button
-                          key={type}
-                          type="button"
-                          onClick={() => handleEventTypeSelect(type)}
-                          className="w-full px-4 py-3 text-left text-[#A0A0A0] hover:text-[#EDEDED] hover:bg-[#D4AF37]/10 transition-colors"
-                          data-testid={`event-option-${type.toLowerCase().replace(' ', '-')}`}
+                        <SelectItem 
+                          key={type.value} 
+                          value={type.value}
+                          className="py-3 px-4 text-[#A0A0A0] hover:text-[#EDEDED] hover:bg-[#D4AF37]/10 focus:bg-[#D4AF37]/10 focus:text-[#EDEDED] cursor-pointer rounded-none"
+                          data-testid={`event-option-${type.value}`}
                         >
-                          {type}
-                        </button>
+                          {type.label}
+                        </SelectItem>
                       ))}
-                    </motion.div>
-                  )}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 {/* Message Field */}

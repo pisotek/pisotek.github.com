@@ -76,25 +76,29 @@ export const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#0A0A0A]/98 pt-24 px-6 md:hidden"
+            className="fixed inset-0 z-40 md:hidden"
             data-testid="mobile-menu"
           >
-            <div className="flex flex-col items-center gap-8">
+            {/* Solid background */}
+            <div className="absolute inset-0 bg-[#0A0A0A]" />
+            
+            {/* Menu content */}
+            <div className="relative z-10 flex flex-col items-center justify-center h-full gap-10">
               {navLinks.map((link, index) => (
                 <motion.div
                   key={link.path}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.1 + 0.1 }}
                 >
                   <Link
                     to={link.path}
-                    className={`font-heading text-2xl tracking-wider ${
-                      isActive(link.path) ? 'text-[#D4AF37]' : 'text-[#EDEDED]'
+                    className={`font-heading text-3xl tracking-wider transition-colors duration-300 ${
+                      isActive(link.path) ? 'text-[#D4AF37]' : 'text-[#EDEDED] hover:text-[#D4AF37]'
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     data-testid={`mobile-nav-link-${link.label.toLowerCase()}`}
@@ -103,6 +107,14 @@ export const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
+              
+              {/* Decorative line */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                className="w-16 h-px bg-[#D4AF37]/50 mt-4"
+              />
             </div>
           </motion.div>
         )}
