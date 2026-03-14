@@ -1,0 +1,164 @@
+{
+  "identity": {
+    "persona": "E1: The Anti-AI Designer",
+    "mission": "Create a luxury mixology portfolio that feels like a high-end lounge experience. Avoid generic 'dark mode' tropes; use deep textures, sophisticated typography, and meaningful negative space.",
+    "emotional_tone": "Sophisticated, Intimate, Exclusive, Masterful, Liquid Art",
+    "target_audience": "Luxury event planners, high-net-worth individuals, premium hospitality venues"
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Playfair Display, serif",
+      "weights": ["400", "700"],
+      "usage": "All section titles, hero text, and cocktail names. Use distinct letter spacing for uppercase.",
+      "styles": "italic for accents"
+    },
+    "body": {
+      "font_family": "Lato, sans-serif",
+      "weights": ["300", "400", "700"],
+      "usage": "Descriptions, ingredients, contact details. Clean and legible at small sizes."
+    },
+    "installation_command": "npm install @fontsource/playfair-display @fontsource/lato"
+  },
+  "colors": {
+    "primary": {
+      "background": "#0A0A0A",
+      "surface": "#121212",
+      "text": "#EDEDED"
+    },
+    "accent": {
+      "gold": "#D4AF37",
+      "gold_muted": "#C5A059",
+      "gold_highlight": "#F9E5B8"
+    },
+    "utility": {
+      "border": "rgba(212, 175, 55, 0.2)",
+      "glass": "rgba(18, 18, 18, 0.6)",
+      "error": "#EF4444",
+      "success": "#10B981"
+    },
+    "gradients": {
+      "gold_shine": "linear-gradient(45deg, #C5A059 0%, #F9E5B8 50%, #C5A059 100%)",
+      "dark_fade": "linear-gradient(to bottom, rgba(10,10,10,0) 0%, #0A0A0A 100%)"
+    }
+  },
+  "visual_enhancers": {
+    "textures": {
+      "marble": "Use the black marble image as a subtle background overlay with low opacity (10-20%) on specific sections (Hero, Footer).",
+      "grain": "Add a global noise/grain overlay (opacity 0.03) to prevent digital flatness."
+    },
+    "shadows": {
+      "glow": "0 0 20px rgba(212, 175, 55, 0.15)",
+      "card": "0 10px 30px -10px rgba(0, 0, 0, 0.5)"
+    },
+    "borders": {
+      "gold_thin": "1px solid rgba(212, 175, 55, 0.3)"
+    }
+  },
+  "component_strategies": {
+    "buttons": {
+      "primary": "Border: 1px solid #D4AF37. Text: #D4AF37. Hover: Bg #D4AF37, Text #0A0A0A. Transition: all 0.3s ease.",
+      "secondary": "Text-only with gold underline on hover.",
+      "radius": "rounded-none (Sharp edges for elegance) or rounded-sm"
+    },
+    "cards": {
+      "style": "Glassmorphism. Bg: rgba(255,255,255,0.03). Border: 1px solid rgba(255,255,255,0.05). Hover: Border #D4AF37/50.",
+      "content": "Cocktail image top (aspect-square or 4:5), Name (Playfair), Description (Lato light)."
+    },
+    "navigation": {
+      "style": "Sticky top, backdrop-blur-md, border-b border-white/5. Logo: Gold text.",
+      "links": "Uppercase, tracking-widest, hover:text-gold."
+    },
+    "timeline": {
+      "style": "Vertical line (gold). Dots for milestones. Alternating left/right content for desktop."
+    },
+    "contact_form": {
+      "inputs": "Bg: transparent. Border-bottom: 1px solid #333. Focus: Border-bottom #D4AF37. No rounded corners.",
+      "labels": "Uppercase, text-xs, tracking-widest, text-gray-500."
+    }
+  },
+  "layout_strategies": {
+    "grid_system": {
+      "gallery": "Bento Grid or Masonry. Do not use equal squares. Make 'Signature' cocktails span 2 cols.",
+      "hero": "Full viewport height (100vh). Centered text or Split (Text Left / Image Right)."
+    },
+    "spacing": {
+      "section_padding": "py-24 or py-32",
+      "element_gap": "gap-8 or gap-12"
+    }
+  },
+  "image_urls": {
+    "hero": {
+      "url": "https://images.unsplash.com/photo-1729863254208-2fdc172a0bc6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBiYXJ0ZW5kZXIlMjBwb3VyaW5nJTIwY29ja3RhaWwlMjBkYXJrJTIwbW9vZHxlbnwwfHx8fDE3NzM0ODEyMDR8MA&ixlib=rb-4.1.0&q=85",
+      "desc": "Bartender making drink - Dark Mood",
+      "alt": "Alex Sterling crafting a signature cocktail"
+    },
+    "textures": {
+      "black_marble": "https://images.unsplash.com/photo-1643324896137-f0928e76202a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwyfHxibGFjayUyMG1hcmJsZSUyMHRleHR1cmUlMjBnb2xkJTIwdmVpbnN8ZW58MHx8fHwxNzczNDgxMjAzfDA&ixlib=rb-4.1.0&q=85",
+      "gold_veins": "https://images.pexels.com/photos/450055/pexels-photo-450055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    "cocktails": [
+      {
+        "url": "https://images.unsplash.com/photo-1773188243511-2eb85126f08b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHw0fHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
+        "name": "The Obsidian Martini",
+        "desc": "Gin, Dry Vermouth, Black Olive Brine, Activated Charcoal."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1643005497643-0c11084ca835?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwzfHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
+        "name": "Golden Hour Sour",
+        "desc": "Whiskey, Lemon, Egg White, Gold Leaf Garnish."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1643005498149-c7684a669bcf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwxfHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
+        "name": "Velvet Merlot",
+        "desc": "Red Wine Reduction, Cognac, Spiced Berry Smoke."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1625608343997-d53dca75aa09?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwyfHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
+        "name": "Crystal Clear",
+        "desc": "Clarified Milk Punch, Pineapple, Rum, Coconut Water."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1683027922895-8022e129ae08?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
+        "name": "Nightshade",
+        "desc": "Blackberry Liqueur, Vodka, Thyme, Lemon Twist."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1638022380139-00dd53630102?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
+        "name": "Amber Old Fashioned",
+        "desc": "Aged Rum, Maple Syrup, Angostura Bitters, Orange Peel."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1543924483-97317fc27712?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
+        "name": "Gilded Cage",
+        "desc": "Champagne, Elderflower St. Germain, Gold Dust."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1679685806190-7fd75c150c38?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
+        "name": "Midnight Espresso",
+        "desc": "Espresso, Kahlua, Vodka, Vanilla Bean."
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Install 'framer-motion' for all animations. Use 'lucide-react' for icons.",
+    "Implement a 'Smooth Scroll' wrapper if possible using 'lenis' or just native scroll-behavior: smooth.",
+    "Use the provided 'black_marble' texture as a background for the 'Certifications' or 'Contact' section to break visual monotony.",
+    "Ensure the 'Contact' form sends a mailto: link on submit. No backend required.",
+    "Use 'Playfair Display' for the big tagline 'Crafting Liquid Art'.",
+    "For the Gallery: Create a responsive grid. On mobile: 1 col. On Desktop: 3 or 4 cols. Use aspect-ratio-square for images.",
+    "NAVIGATION: Create a simple sticky navbar with links: Portfolio, Certifications, Contact.",
+    "FOOTER: Minimalist. '© 2025 Alex Sterling. The Art of Mixology.' with social icons."
+  ],
+  "universal_guidelines": [
+    "Do not use generic 'on distribution' outputs. Create distinctive frontends.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "Every interaction needs micro-animations - hover states, transitions.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Subtle grain textures, noise overlays, custom cursors.",
+    "All interactive elements MUST include data-testid attribute.",
+    "Export components as named exports.",
+    "Use 'sonner' for toasts."
+  ]
+}
