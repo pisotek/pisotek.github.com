@@ -1,51 +1,77 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { CocktailCard } from '../components/CocktailCard';
+import { CocktailModal } from '../components/CocktailModal';
 
 const cocktails = [
   {
     url: "https://images.unsplash.com/photo-1773188243511-2eb85126f08b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHw0fHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
     name: "The Obsidian Martini",
-    desc: "Gin, Dry Vermouth, Black Olive Brine, Activated Charcoal."
+    desc: "Gin, Dry Vermouth, Black Olive Brine, Activated Charcoal.",
+    flavorProfile: "A bold, savory martini with an alluring dark mystique. The activated charcoal creates a striking visual while adding subtle mineral notes that complement the botanical gin and briny olive undertones.",
+    tastingNotes: ["Savory", "Botanical", "Mineral", "Briny"]
   },
   {
     url: "https://images.unsplash.com/photo-1643005497643-0c11084ca835?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwzfHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
     name: "Golden Hour Sour",
-    desc: "Whiskey, Lemon, Egg White, Gold Leaf Garnish."
+    desc: "Whiskey, Lemon, Egg White, Gold Leaf Garnish.",
+    flavorProfile: "A luxurious twist on the classic whiskey sour. Silky egg white foam meets bright citrus and smooth bourbon, crowned with delicate gold leaf for an unforgettable presentation.",
+    tastingNotes: ["Citrus", "Smooth", "Velvety", "Warm"]
   },
   {
     url: "https://images.unsplash.com/photo-1643005498149-c7684a669bcf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwxfHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
     name: "Velvet Merlot",
-    desc: "Red Wine Reduction, Cognac, Spiced Berry Smoke."
+    desc: "Red Wine Reduction, Cognac, Spiced Berry Smoke.",
+    flavorProfile: "An opulent fusion of wine country elegance and cocktail craftsmanship. The concentrated merlot reduction brings deep berry richness, while cognac adds warmth and subtle smoke lingers on the finish.",
+    tastingNotes: ["Berry", "Smoky", "Rich", "Complex"]
   },
   {
     url: "https://images.unsplash.com/photo-1625608343997-d53dca75aa09?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwyfHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
     name: "Crystal Clear",
-    desc: "Clarified Milk Punch, Pineapple, Rum, Coconut Water."
+    desc: "Clarified Milk Punch, Pineapple, Rum, Coconut Water.",
+    flavorProfile: "A tropical escape refined through milk clarification, yielding a crystal-clear elixir with impossibly smooth texture. Bright pineapple and coconut transport you to paradise with every sip.",
+    tastingNotes: ["Tropical", "Silky", "Refreshing", "Clean"]
   },
   {
     url: "https://images.unsplash.com/photo-1683027922895-8022e129ae08?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
     name: "Nightshade",
-    desc: "Blackberry Liqueur, Vodka, Thyme, Lemon Twist."
+    desc: "Blackberry Liqueur, Vodka, Thyme, Lemon Twist.",
+    flavorProfile: "A mysterious garden-inspired creation where ripe blackberry meets aromatic thyme. The herbal complexity unfolds gradually, revealing layers of dark fruit and citrus brightness.",
+    tastingNotes: ["Fruity", "Herbal", "Dark", "Aromatic"]
   },
   {
     url: "https://images.unsplash.com/photo-1638022380139-00dd53630102?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
     name: "Amber Old Fashioned",
-    desc: "Aged Rum, Maple Syrup, Angostura Bitters, Orange Peel."
+    desc: "Aged Rum, Maple Syrup, Angostura Bitters, Orange Peel.",
+    flavorProfile: "A sophisticated reimagining of the timeless classic. Aged rum brings caramel depth while pure maple syrup adds an autumnal sweetness, balanced by aromatic bitters and bright citrus oils.",
+    tastingNotes: ["Caramel", "Spiced", "Warm", "Balanced"]
   },
   {
     url: "https://images.unsplash.com/photo-1543924483-97317fc27712?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
     name: "Gilded Cage",
-    desc: "Champagne, Elderflower St. Germain, Gold Dust."
+    desc: "Champagne, Elderflower St. Germain, Gold Dust.",
+    flavorProfile: "Pure celebration in a glass. Effervescent champagne lifts delicate elderflower notes while shimmering gold dust catches the light, creating an ethereal drinking experience fit for royalty.",
+    tastingNotes: ["Floral", "Effervescent", "Elegant", "Light"]
   },
   {
     url: "https://images.unsplash.com/photo-1679685806190-7fd75c150c38?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
     name: "Midnight Espresso",
-    desc: "Espresso, Kahlua, Vodka, Vanilla Bean."
+    desc: "Espresso, Kahlua, Vodka, Vanilla Bean.",
+    flavorProfile: "The perfect after-dinner indulgence. Freshly pulled espresso meets velvety Kahlua and smooth vodka, finished with real vanilla bean for a coffee experience that transcends the ordinary.",
+    tastingNotes: ["Coffee", "Sweet", "Creamy", "Bold"]
   }
 ];
 
 export const HomePage = () => {
+  const [selectedCocktail, setSelectedCocktail] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleCocktailClick = (cocktail) => {
+    setSelectedCocktail(cocktail);
+    setIsModalOpen(true);
+  };
+
   const scrollToGallery = () => {
     const gallery = document.getElementById('signature-creations');
     if (gallery) {
@@ -160,6 +186,7 @@ export const HomePage = () => {
                 cocktail={cocktail}
                 index={index}
                 isLarge={index === 0 || index === 5}
+                onClick={() => handleCocktailClick(cocktail)}
               />
             ))}
           </div>
@@ -188,6 +215,13 @@ export const HomePage = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Cocktail Modal */}
+      <CocktailModal
+        cocktail={selectedCocktail}
+        isOpen={isModalOpen}
+        onClose={setIsModalOpen}
+      />
     </main>
   );
 };

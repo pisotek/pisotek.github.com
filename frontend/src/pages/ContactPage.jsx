@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Instagram, Linkedin, Mail, MapPin, Send } from 'lucide-react';
+import { Instagram, Linkedin, Mail, MapPin, Send, AlertTriangle } from 'lucide-react';
 import { toast } from 'sonner';
 import {
   Select,
@@ -107,7 +107,31 @@ export const ContactPage = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <form onSubmit={handleSubmit} className="space-y-8" data-testid="contact-form">
+              {/* Maintenance Notice */}
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="mb-8 p-4 bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-start gap-4"
+                data-testid="maintenance-notice"
+              >
+                <AlertTriangle className="text-[#D4AF37] flex-shrink-0 mt-0.5" size={20} />
+                <div>
+                  <p className="text-[#EDEDED] text-sm font-medium mb-1">Service Under Maintenance</p>
+                  <p className="text-[#A0A0A0] text-sm">
+                    The contact form is currently under maintenance. Please reach out directly at{' '}
+                    <a 
+                      href="mailto:contact@alexsterling.com" 
+                      className="text-[#D4AF37] hover:underline"
+                      data-testid="maintenance-email-link"
+                    >
+                      contact@alexsterling.com
+                    </a>
+                  </p>
+                </div>
+              </motion.div>
+
+              <form onSubmit={handleSubmit} className="space-y-8 opacity-50 pointer-events-none" data-testid="contact-form">
                 {/* Name Field */}
                 <div>
                   <label className="label-elegant" htmlFor="name">Your Name</label>

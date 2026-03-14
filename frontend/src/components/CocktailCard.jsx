@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export const CocktailCard = ({ cocktail, index, isLarge = false }) => {
+export const CocktailCard = ({ cocktail, index, isLarge = false, onClick }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -8,6 +8,7 @@ export const CocktailCard = ({ cocktail, index, isLarge = false }) => {
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className={`card-glass group cursor-pointer ${isLarge ? 'md:col-span-2 md:row-span-2' : ''}`}
+      onClick={onClick}
       data-testid={`cocktail-card-${index}`}
     >
       {/* Image Container */}
