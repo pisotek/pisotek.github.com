@@ -13,24 +13,26 @@ export const CocktailModal = ({ cocktail, isOpen, onClose }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent 
-        className="bg-[#0A0A0A] border border-[#D4AF37]/30 max-w-4xl w-[95vw] max-h-[90vh] p-0 overflow-hidden [&>button]:hidden"
+        className="bg-[#0A0A0A] border border-[#D4AF37]/30 max-w-4xl w-[95vw] max-h-[90vh] p-0 [&>button]:hidden"
         data-testid="cocktail-modal"
       >
-        {/* Scrollable content */}
+        {/* Scrollable content wrapper */}
         <div className="relative max-h-[90vh] overflow-y-auto">
-          {/* Close Button - Fixed position within modal */}
-          <button
-            onClick={() => onClose(false)}
-            className="sticky top-3 float-right mr-3 mt-3 z-[100] w-10 h-10 flex items-center justify-center text-white bg-black/70 rounded-full border border-[#D4AF37] transition-colors hover:bg-[#D4AF37] hover:text-black"
-            data-testid="modal-close-btn"
-          >
-            <X size={20} />
-          </button>
+          {/* Fixed Close Button - Positioned at top right of scrollable area */}
+          <div className="sticky top-0 z-[100] h-0">
+            <button
+              onClick={() => onClose(false)}
+              className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center text-white bg-black/80 rounded-full border border-[#D4AF37] transition-colors hover:bg-[#D4AF37] hover:text-black shadow-lg"
+              data-testid="modal-close-btn"
+            >
+              <X size={20} />
+            </button>
+          </div>
 
-          <div className="flex flex-col md:flex-row -mt-[52px] md:mt-0">
-            {/* Image Section */}
+          <div className="flex flex-col md:flex-row">
+            {/* Image Section - Full display */}
             <div className="w-full md:w-1/2 flex-shrink-0">
-              <div className="aspect-square md:aspect-auto md:h-full md:min-h-[500px] relative">
+              <div className="aspect-square md:aspect-auto md:h-full md:min-h-[500px]">
                 <img
                   src={cocktail.url}
                   alt={cocktail.name}
