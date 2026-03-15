@@ -13,32 +13,35 @@ export const CocktailModal = ({ cocktail, isOpen, onClose }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent 
-        className="bg-[#121212] border border-[#D4AF37]/30 max-w-3xl w-[95vw] p-0 overflow-hidden rounded-none [&>button]:text-[#A0A0A0] [&>button]:hover:text-[#D4AF37] [&>button]:top-5 [&>button]:right-5 [&>button]:z-20"
+        className="bg-[#0A0A0A] border border-[#D4AF37]/30 max-w-4xl w-[95vw] max-h-[90vh] p-0 overflow-y-auto [&>button]:text-[#A0A0A0] [&>button]:hover:text-[#D4AF37] [&>button]:top-3 [&>button]:right-3 [&>button]:z-20 [&>button]:bg-[#0A0A0A]/90 [&>button]:rounded-full [&>button]:p-2 [&>button]:w-8 [&>button]:h-8 [&>button]:backdrop-blur-sm"
         data-testid="cocktail-modal"
       >
-        <div className="grid md:grid-cols-2 max-h-[85vh] overflow-y-auto">
-          {/* Image */}
-          <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[400px]">
-            <img
-              src={cocktail.url}
-              alt={cocktail.name}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#121212]/80 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#121212]/30" />
+        {/* Mobile: Stack vertically and scroll together */}
+        {/* Desktop: Side by side */}
+        <div className="flex flex-col md:flex-row">
+          {/* Image Section */}
+          <div className="w-full md:w-1/2 flex-shrink-0">
+            <div className="aspect-square md:aspect-auto md:h-full md:min-h-[500px] relative">
+              <img
+                src={cocktail.url}
+                alt={cocktail.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
 
-          {/* Content */}
-          <div className="p-6 md:p-8 flex flex-col justify-center">
-            <DialogHeader className="mb-6 space-y-3">
+          {/* Content Section */}
+          <div className="w-full md:w-1/2 p-6 md:p-8 bg-[#0A0A0A]">
+            <DialogHeader className="mb-6 space-y-2">
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-[#D4AF37] text-xs tracking-[0.3em] uppercase"
+                className="text-[#D4AF37] text-xs tracking-[0.25em] uppercase font-medium"
               >
                 Signature Creation
               </motion.p>
-              <DialogTitle className="font-heading text-2xl md:text-3xl text-[#EDEDED] text-left">
+              <DialogTitle className="font-heading text-2xl md:text-3xl text-[#EDEDED] text-left leading-tight">
                 {cocktail.name}
               </DialogTitle>
               <DialogDescription className="sr-only">
@@ -51,9 +54,9 @@ export const CocktailModal = ({ cocktail, isOpen, onClose }) => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mb-5"
+              className="mb-6"
             >
-              <h4 className="text-[#D4AF37] text-xs tracking-[0.2em] uppercase mb-2">
+              <h4 className="text-[#D4AF37] text-xs tracking-[0.2em] uppercase mb-3 font-medium">
                 Ingredients
               </h4>
               <p className="text-[#EDEDED] text-sm leading-relaxed">
@@ -68,7 +71,7 @@ export const CocktailModal = ({ cocktail, isOpen, onClose }) => {
               transition={{ delay: 0.3 }}
               className="mb-6"
             >
-              <h4 className="text-[#D4AF37] text-xs tracking-[0.2em] uppercase mb-2">
+              <h4 className="text-[#D4AF37] text-xs tracking-[0.2em] uppercase mb-3 font-medium">
                 Flavor Profile
               </h4>
               <p className="text-[#A0A0A0] text-sm leading-relaxed">
@@ -82,16 +85,16 @@ export const CocktailModal = ({ cocktail, isOpen, onClose }) => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="pt-5 border-t border-white/10"
+                className="pt-6 border-t border-[#D4AF37]/20"
               >
-                <h4 className="text-[#D4AF37] text-xs tracking-[0.2em] uppercase mb-3">
+                <h4 className="text-[#D4AF37] text-xs tracking-[0.2em] uppercase mb-4 font-medium">
                   Tasting Notes
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {cocktail.tastingNotes.map((note, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1.5 text-xs text-[#EDEDED] bg-[#D4AF37]/10 border border-[#D4AF37]/20"
+                      className="px-4 py-2 text-xs text-[#EDEDED] bg-[#D4AF37]/10 border border-[#D4AF37]/30 tracking-wide"
                     >
                       {note}
                     </span>

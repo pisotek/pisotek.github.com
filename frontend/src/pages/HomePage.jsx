@@ -178,14 +178,13 @@ export const HomePage = () => {
             </h2>
           </motion.div>
 
-          {/* Cocktail Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {/* Cocktail Grid - 4 columns on desktop, 2 rows of 4 */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
             {cocktails.map((cocktail, index) => (
               <CocktailCard
                 key={cocktail.name}
                 cocktail={cocktail}
                 index={index}
-                isLarge={index === 0 || index === 5}
                 onClick={() => handleCocktailClick(cocktail)}
               />
             ))}
