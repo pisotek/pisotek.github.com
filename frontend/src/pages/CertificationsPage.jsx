@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Award, GraduationCap, Trophy, Star } from 'lucide-react';
 
 const certifications = [
@@ -84,32 +83,19 @@ export const CertificationsPage = () => {
       {/* Hero Section */}
       <section className="py-16 lg:py-24 px-6 lg:px-12 marble-overlay">
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-[#D4AF37] text-sm tracking-[0.3em] uppercase mb-4"
-          >
+          <p className="text-[#D4AF37] text-sm tracking-[0.3em] uppercase mb-4">
             Credentials & Achievements
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+          </p>
+          <h1
             className="font-heading text-4xl sm:text-5xl lg:text-6xl text-[#EDEDED] mb-6"
             data-testid="certifications-title"
           >
             Certifications
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[#A0A0A0] text-base lg:text-lg max-w-2xl mx-auto"
-          >
+          </h1>
+          <p className="text-[#A0A0A0] text-base lg:text-lg max-w-2xl mx-auto">
             A journey of continuous learning and recognition in the art of mixology. 
             Each milestone represents a dedication to excellence and craft.
-          </motion.p>
+          </p>
         </div>
       </section>
 
@@ -126,12 +112,8 @@ export const CertificationsPage = () => {
               const isLeft = index % 2 === 0;
 
               return (
-                <motion.div
+                <div
                   key={cert.title}
-                  initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: '-100px' }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   className={`relative flex items-center mb-16 ${isLeft ? 'justify-end' : 'justify-start'}`}
                   data-testid={`timeline-item-${index}`}
                 >
@@ -170,7 +152,7 @@ export const CertificationsPage = () => {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -181,12 +163,8 @@ export const CertificationsPage = () => {
               const Icon = cert.icon;
 
               return (
-                <motion.div
+                <div
                   key={cert.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="card-glass p-6"
                   data-testid={`mobile-timeline-item-${index}`}
                 >
@@ -215,7 +193,7 @@ export const CertificationsPage = () => {
                   <p className="text-[#A0A0A0] text-sm leading-relaxed">
                     {cert.description}
                   </p>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -232,12 +210,8 @@ export const CertificationsPage = () => {
               { number: '50+', label: 'Original Recipes' },
               { number: '6', label: 'Industry Awards' }
             ].map((stat, index) => (
-              <motion.div
+              <div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
                 data-testid={`stat-${index}`}
               >
@@ -247,7 +221,7 @@ export const CertificationsPage = () => {
                 <p className="text-[#A0A0A0] text-sm tracking-wide uppercase">
                   {stat.label}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

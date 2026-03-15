@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Instagram, Linkedin, Mail, MapPin, Send, AlertTriangle } from 'lucide-react';
 import { toast } from 'sonner';
 import {
@@ -19,6 +18,8 @@ const eventTypes = [
   { value: 'other', label: 'Other' }
 ];
 
+const CONTACT_EMAIL = 'contact@alexsterling.com';
+
 export const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -37,16 +38,19 @@ export const ContactPage = () => {
     setFormData(prev => ({ ...prev, eventType: selectedEvent?.label || '' }));
   };
 
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    window.open(`mailto:${CONTACT_EMAIL}`, '_blank');
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Validate form
     if (!formData.name || !formData.email || !formData.eventType || !formData.message) {
       toast.error('Please fill in all fields');
       return;
     }
 
-    // Create mailto link
     const subject = encodeURIComponent(`Mixology Inquiry: ${formData.eventType}`);
     const body = encodeURIComponent(
       `Name: ${formData.name}\n` +
@@ -55,11 +59,7 @@ export const ContactPage = () => {
       `Message:\n${formData.message}`
     );
     
-    const mailtoLink = `mailto:contact@alexsterling.com?subject=${subject}&body=${body}`;
-    
-    // Open mail client
-    window.location.href = mailtoLink;
-    
+    window.open(`mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`, '_blank');
     toast.success('Opening your email client...');
   };
 
@@ -68,32 +68,19 @@ export const ContactPage = () => {
       {/* Hero Section */}
       <section className="py-16 lg:py-24 px-6 lg:px-12">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-[#D4AF37] text-sm tracking-[0.3em] uppercase mb-4"
-          >
+          <p className="text-[#D4AF37] text-sm tracking-[0.3em] uppercase mb-4">
             Let&apos;s Connect
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+          </p>
+          <h1
             className="font-heading text-4xl sm:text-5xl lg:text-6xl text-[#EDEDED] mb-6"
             data-testid="contact-title"
           >
             Get in Touch
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[#A0A0A0] text-base lg:text-lg max-w-2xl mx-auto"
-          >
+          </h1>
+          <p className="text-[#A0A0A0] text-base lg:text-lg max-w-2xl mx-auto">
             Ready to create something extraordinary? Whether it&apos;s an intimate gathering 
             or a grand celebration, I&apos;d love to hear about your vision.
-          </motion.p>
+          </p>
         </div>
       </section>
 
@@ -102,16 +89,9 @@ export const ContactPage = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
+            <div>
               {/* Maintenance Notice */}
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
+              <div
                 className="mb-8 p-4 bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-start gap-4"
                 data-testid="maintenance-notice"
               >
@@ -121,15 +101,16 @@ export const ContactPage = () => {
                   <p className="text-[#A0A0A0] text-sm">
                     The contact form is currently under maintenance. Please reach out directly at{' '}
                     <a 
-                      href="mailto:contact@alexsterling.com" 
-                      className="text-[#D4AF37] hover:underline"
+                      href={`mailto:${CONTACT_EMAIL}`}
+                      onClick={handleEmailClick}
+                      className="text-[#D4AF37] hover:underline cursor-pointer"
                       data-testid="maintenance-email-link"
                     >
-                      contact@alexsterling.com
+                      {CONTACT_EMAIL}
                     </a>
                   </p>
                 </div>
-              </motion.div>
+              </div>
 
               <form onSubmit={handleSubmit} className="space-y-8 opacity-50 pointer-events-none" data-testid="contact-form">
                 {/* Name Field */}
@@ -162,7 +143,7 @@ export const ContactPage = () => {
                   />
                 </div>
 
-                {/* Event Type Dropdown - Using Shadcn Select */}
+                {/* Event Type Dropdown */}
                 <div>
                   <label className="label-elegant">Event Type</label>
                   <Select onValueChange={handleEventTypeChange} data-testid="dropdown-event-type">
@@ -215,15 +196,10 @@ export const ContactPage = () => {
                   <Send size={16} />
                 </button>
               </form>
-            </motion.div>
+            </div>
 
             {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="lg:pl-12"
-            >
+            <div className="lg:pl-12">
               <div className="space-y-12">
                 {/* Info Cards */}
                 <div className="card-glass p-8">
@@ -237,11 +213,12 @@ export const ContactPage = () => {
                       <div>
                         <p className="text-[#666666] text-xs tracking-wider uppercase mb-1">Email</p>
                         <a 
-                          href="mailto:contact@alexsterling.com" 
-                          className="text-[#EDEDED] hover:text-[#D4AF37] transition-colors"
+                          href={`mailto:${CONTACT_EMAIL}`}
+                          onClick={handleEmailClick}
+                          className="text-[#EDEDED] hover:text-[#D4AF37] transition-colors cursor-pointer"
                           data-testid="contact-email"
                         >
-                          contact@alexsterling.com
+                          {CONTACT_EMAIL}
                         </a>
                       </div>
                     </div>
@@ -297,7 +274,7 @@ export const ContactPage = () => {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

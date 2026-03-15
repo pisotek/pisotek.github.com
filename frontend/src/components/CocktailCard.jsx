@@ -1,13 +1,7 @@
-import { motion } from 'framer-motion';
-
 export const CocktailCard = ({ cocktail, index, onClick }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.6, delay: index * 0.08 }}
-      className="card-glass group cursor-pointer overflow-hidden"
+    <div
+      className="card-glass group cursor-pointer overflow-hidden transition-all duration-300 hover:border-[#D4AF37]/50"
       onClick={onClick}
       data-testid={`cocktail-card-${index}`}
     >
@@ -16,18 +10,15 @@ export const CocktailCard = ({ cocktail, index, onClick }) => {
         <img
           src={cocktail.url}
           alt={cocktail.name}
-          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
           loading="lazy"
         />
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-70" />
         
-        {/* Hover Effect */}
-        <div className="absolute inset-0 bg-[#D4AF37]/0 transition-colors duration-300 group-hover:bg-[#D4AF37]/5" />
-        
         {/* View Details Hint */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span className="px-4 py-2 text-xs tracking-widest uppercase text-[#D4AF37] border border-[#D4AF37]/50 bg-[#0A0A0A]/80 backdrop-blur-sm">
+          <span className="px-4 py-2 text-xs tracking-widest uppercase text-[#D4AF37] border border-[#D4AF37]/50 bg-[#0A0A0A]/80">
             View Details
           </span>
         </div>
@@ -42,6 +33,6 @@ export const CocktailCard = ({ cocktail, index, onClick }) => {
           {cocktail.desc}
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 };

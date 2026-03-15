@@ -176,10 +176,10 @@
 }
 
 /* Animations */
-@keyframes fadeInUp {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -187,23 +187,15 @@
   }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease forwards;
+/* Optimize performance */
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
-.animate-shimmer {
-  background: linear-gradient(90deg, var(--gold-muted) 0%, var(--gold-highlight) 50%, var(--gold-muted) 100%);
-  background-size: 200% 100%;
-  animation: shimmer 3s ease infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+img {
+  content-visibility: auto;
 }
