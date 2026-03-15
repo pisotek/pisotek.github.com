@@ -16,21 +16,19 @@ export const CocktailModal = ({ cocktail, isOpen, onClose }) => {
         className="bg-[#0A0A0A] border border-[#D4AF37]/30 max-w-4xl w-[95vw] max-h-[90vh] p-0 overflow-hidden [&>button]:hidden"
         data-testid="cocktail-modal"
       >
-        {/* Scrollable wrapper */}
-        <div className="relative max-h-[90vh] overflow-y-auto">
-          {/* Sticky Close Button */}
-          <div className="sticky top-0 z-50 flex justify-end p-3 bg-gradient-to-b from-[#0A0A0A] to-transparent">
-            <button
-              onClick={() => onClose(false)}
-              className="w-10 h-10 flex items-center justify-center text-white hover:text-[#D4AF37] bg-[#0A0A0A] rounded-full border border-[#D4AF37]/50 transition-colors shadow-lg"
-              data-testid="modal-close-btn"
-            >
-              <X size={20} />
-            </button>
-          </div>
+        {/* Fixed Close Button - top right corner */}
+        <button
+          onClick={() => onClose(false)}
+          className="absolute top-3 right-3 z-[100] w-10 h-10 flex items-center justify-center text-white hover:text-[#D4AF37] bg-[#0A0A0A]/80 backdrop-blur-sm rounded-full border border-[#D4AF37]/50 transition-colors"
+          data-testid="modal-close-btn"
+        >
+          <X size={20} />
+        </button>
 
-          <div className="flex flex-col md:flex-row -mt-12 md:mt-0">
-            {/* Image Section */}
+        {/* Scrollable content */}
+        <div className="max-h-[90vh] overflow-y-auto">
+          <div className="flex flex-col md:flex-row">
+            {/* Image Section - No top spacing */}
             <div className="w-full md:w-1/2 flex-shrink-0">
               <div className="aspect-square md:aspect-auto md:h-full md:min-h-[500px] relative">
                 <img

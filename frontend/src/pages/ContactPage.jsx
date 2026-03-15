@@ -19,6 +19,7 @@ const eventTypes = [
 ];
 
 const CONTACT_EMAIL = 'contact@alexsterling.com';
+const MAILTO_LINK = `mailto:${CONTACT_EMAIL}`;
 
 export const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -38,11 +39,6 @@ export const ContactPage = () => {
     setFormData(prev => ({ ...prev, eventType: selectedEvent?.label || '' }));
   };
 
-  const handleEmailClick = (e) => {
-    e.preventDefault();
-    window.open(`mailto:${CONTACT_EMAIL}`, '_blank');
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     
@@ -59,7 +55,9 @@ export const ContactPage = () => {
       `Message:\n${formData.message}`
     );
     
-    window.open(`mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`, '_blank');
+    const mailtoLink = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+    
     toast.success('Opening your email client...');
   };
 
@@ -101,9 +99,8 @@ export const ContactPage = () => {
                   <p className="text-[#A0A0A0] text-sm">
                     The contact form is currently under maintenance. Please reach out directly at{' '}
                     <a 
-                      href={`mailto:${CONTACT_EMAIL}`}
-                      onClick={handleEmailClick}
-                      className="text-[#D4AF37] hover:underline cursor-pointer"
+                      href={MAILTO_LINK}
+                      className="text-[#D4AF37] hover:underline"
                       data-testid="maintenance-email-link"
                     >
                       {CONTACT_EMAIL}
@@ -213,9 +210,8 @@ export const ContactPage = () => {
                       <div>
                         <p className="text-[#666666] text-xs tracking-wider uppercase mb-1">Email</p>
                         <a 
-                          href={`mailto:${CONTACT_EMAIL}`}
-                          onClick={handleEmailClick}
-                          className="text-[#EDEDED] hover:text-[#D4AF37] transition-colors cursor-pointer"
+                          href={MAILTO_LINK}
+                          className="text-[#EDEDED] hover:text-[#D4AF37] transition-colors"
                           data-testid="contact-email"
                         >
                           {CONTACT_EMAIL}

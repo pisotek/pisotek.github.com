@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { CocktailCard } from '../components/CocktailCard';
 import { CocktailModal } from '../components/CocktailModal';
@@ -65,6 +65,13 @@ const cocktails = [
 export const HomePage = () => {
   const [selectedCocktail, setSelectedCocktail] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Trigger animations after component mounts
+    const timer = setTimeout(() => setIsLoaded(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleCocktailClick = (cocktail) => {
     setSelectedCocktail(cocktail);
@@ -95,26 +102,38 @@ export const HomePage = () => {
 
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <p className="text-[#D4AF37] text-sm tracking-[0.3em] uppercase mb-6 animate-fade-in">
-            Master Mixologist
+          <p 
+            className={`text-[#D4AF37] text-sm tracking-[0.3em] uppercase mb-6 transition-all duration-700 ease-out ${
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
+            Bartender Mixologist
           </p>
           
           <h1
-            className="font-heading text-4xl sm:text-5xl lg:text-7xl text-[#EDEDED] mb-6 leading-tight animate-fade-in"
+            className={`font-heading text-4xl sm:text-5xl lg:text-7xl text-[#EDEDED] mb-6 leading-tight transition-all duration-700 ease-out delay-100 ${
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
             data-testid="hero-title"
           >
             Crafting{' '}
             <span className="italic text-gold-gradient">Liquid Art</span>
           </h1>
           
-          <p className="text-[#A0A0A0] text-base lg:text-lg max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in">
+          <p 
+            className={`text-[#A0A0A0] text-base lg:text-lg max-w-2xl mx-auto mb-12 leading-relaxed transition-all duration-700 ease-out delay-200 ${
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
             Where precision meets passion. Every cocktail tells a story, every pour is a performance. 
             Experience the art of bespoke mixology.
           </p>
 
           <button
             onClick={scrollToGallery}
-            className="btn-primary animate-fade-in"
+            className={`btn-primary transition-all duration-700 ease-out delay-300 ${
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
             data-testid="explore-btn"
           >
             Explore Creations
@@ -122,10 +141,14 @@ export const HomePage = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <div 
+          className={`absolute bottom-12 left-1/2 -translate-x-1/2 z-10 transition-all duration-700 ease-out delay-500 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
           <button
             onClick={scrollToGallery}
-            className="text-[#D4AF37] cursor-pointer"
+            className="text-[#D4AF37] cursor-pointer animate-bounce"
             aria-label="Scroll to gallery"
           >
             <ChevronDown size={32} />
