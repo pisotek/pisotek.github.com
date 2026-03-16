@@ -18,7 +18,7 @@ const eventTypes = [
   { value: 'other', label: 'Other' }
 ];
 
-const CONTACT_EMAIL = 'contact@alexsterling.com';
+const CONTACT_EMAIL = 'contact@alessiopisoni.com';
 const MAILTO_LINK = `mailto:${CONTACT_EMAIL}`;
 
 export const ContactPage = () => {
@@ -76,9 +76,7 @@ export const ContactPage = () => {
             Get in Touch
           </h1>
           <p className="text-[#A0A0A0] text-base lg:text-lg max-w-2xl mx-auto">
-            Ready to create something extraordinary? Whether it&apos;s an intimate gathering 
-            or a grand celebration, I&apos;d love to hear about your vision.
-          </p>
+            Ready to create something extraordinary? Whether you are looking to host a bespoke event or master the art of mixology, I am here to bring your vision to life. </p>
         </div>
       </section>
 
@@ -225,7 +223,7 @@ export const ContactPage = () => {
                       </div>
                       <div>
                         <p className="text-[#666666] text-xs tracking-wider uppercase mb-1">Based In</p>
-                        <p className="text-[#EDEDED]">New York City, USA</p>
+                        <p className="text-[#EDEDED]">Athens, Greece</p>
                         <p className="text-[#A0A0A0] text-sm mt-1">Available for travel worldwide</p>
                       </div>
                     </div>
@@ -263,10 +261,10 @@ export const ContactPage = () => {
 
                 {/* Availability Note */}
                 <div className="p-6 border border-[#D4AF37]/20 bg-[#D4AF37]/5">
-                  <p className="text-[#D4AF37] text-sm font-medium mb-2">Currently Booking</p>
+                  <p className="text-[#D4AF37] text-sm font-medium mb-2">Coming Soon...</p>
                   <p className="text-[#A0A0A0] text-sm">
-                    Accepting inquiries for Q2 2025 events. 
-                    For urgent requests, please mention in your message.
+                    Bookings and Masterclasses are currently closed as i focus on existing projects.<br />
+                    New availability will be announced soon.
                   </p>
                 </div>
               </div>

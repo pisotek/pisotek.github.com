@@ -15,7 +15,7 @@ export const Footer = () => {
           {/* Logo & Tagline */}
           <div className="text-center md:text-left">
             <h3 className="font-heading text-xl text-gold-gradient font-semibold mb-2">
-              Alex Sterling
+              Alessio Pisoni
             </h3>
             <p className="text-[#666666] text-sm tracking-wide">
               The Art of Mixology
@@ -49,7 +49,7 @@ export const Footer = () => {
             className="text-[#666666] text-sm"
             data-testid="footer-copyright"
           >
-            &copy; {currentYear} Alex Sterling. All rights reserved.
+            &copy; {currentYear} Alessio Pisoni. All rights reserved.
           </p>
         </div>
       </div>

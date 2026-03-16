@@ -42,7 +42,7 @@ export const PasswordGate = ({ children }) => {
         {/* Logo */}
         <div className="text-center mb-12">
           <h1 className="font-heading text-3xl text-gold-gradient font-semibold mb-2">
-            Alex Sterling
+            Alessio Pisoni
           </h1>
           <p className="text-[#666666] text-sm tracking-widest uppercase">
             Bartender Mixologist
@@ -96,7 +96,7 @@ export const PasswordGate = ({ children }) => {
 
         {/* Footer */}
         <p className="text-center text-[#666666] text-xs mt-8">
-          &copy; {new Date().getFullYear()} Alex Sterling. All rights reserved.
+          &copy; {new Date().getFullYear()} Alessio Pisoni. All rights reserved.
         </p>
       </div>
     </div>

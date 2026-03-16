@@ -58,7 +58,7 @@ export const Navbar = () => {
               className="font-heading text-xl tracking-wider cursor-pointer"
               data-testid="nav-logo"
             >
-              <span className="text-gold-gradient font-semibold">Alex Sterling</span>
+              <span className="text-gold-gradient font-semibold">Alessio Pisoni</span>
             </a>
 
             {/* Desktop Navigation */}
