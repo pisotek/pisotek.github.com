@@ -197,7 +197,7 @@ export const HomePage = () => {
             From intimate gatherings to grand celebrations, let&apos;s create an unforgettable 
             cocktail experience tailored to your vision.
           </p>
-          <a href="/contact" className="btn-primary" data-testid="cta-contact-btn">
+          <a href="#/contact" className="btn-primary" data-testid="cta-contact-btn">
             Get in Touch
           </a>
         </div>
