@@ -6,59 +6,59 @@ import { CocktailModal } from '../components/CocktailModal';
 const cocktails = [
   {
     url: "https://images.unsplash.com/photo-1773188243511-2eb85126f08b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHw0fHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
-    name: "The Obsidian Martini",
-    desc: "Gin, Dry Vermouth, Black Olive Brine, Activated Charcoal.",
-    flavorProfile: "A bold, savory martini with an alluring dark mystique. The activated charcoal creates a striking visual while adding subtle mineral notes that complement the botanical gin and briny olive undertones.",
-    tastingNotes: ["Savory", "Botanical", "Mineral", "Briny"]
+    name: "Chocolate Negroni",
+    desc: "Cacao-infused Gin, Campari, Sweet Red Vermouth, Chocolate Bitters.",
+    flavorProfile: "An indulgent reimagining of a classic. The gin is fat-washed or infused for 48 hours with toasted cacao nibs, delivering a deep dark chocolate aroma. Finished with a flamed orange peel to release essential oils that brighten the palate.",
+    tastingNotes: ["Indulgent", "Bitter", "Roasted", "Citrus"]
   },
   {
     url: "https://images.unsplash.com/photo-1643005497643-0c11084ca835?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwzfHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
-    name: "Golden Hour Sour",
-    desc: "Whiskey, Lemon, Egg White, Gold Leaf Garnish.",
-    flavorProfile: "A luxurious twist on the classic whiskey sour. Silky egg white foam meets bright citrus and smooth bourbon, crowned with delicate gold leaf for an unforgettable presentation.",
-    tastingNotes: ["Citrus", "Smooth", "Velvety", "Warm"]
+    name: "Mastiha Sunrise",
+    desc: "Tequila Blanco, Mastiha Liqueur, Fresh Orange Juice, Hibiscus & Pomegranate Syrup.",
+    flavorProfile: "The Mediterranean in a glass. The herbal notes of Mastiha resin pair perfectly with the earthy agave of the tequila. Complemented by a homemade hibiscus and pomegranate syrup for a deep ruby hue and a sophisticated floral finish.",
+    tastingNotes: ["Herbal", "Resinous", "Fresh", "Floral"]
   },
   {
-    url: "https://images.unsplash.com/photo-1643005498149-c7684a669bcf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwxfHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
-    name: "Velvet Merlot",
-    desc: "Red Wine Reduction, Cognac, Spiced Berry Smoke.",
-    flavorProfile: "An opulent fusion of wine country elegance and cocktail craftsmanship. The concentrated merlot reduction brings deep berry richness, while cognac adds warmth and subtle smoke lingers on the finish.",
-    tastingNotes: ["Berry", "Smoky", "Rich", "Complex"]
+    url: "https://images.unsplash.com/photo-1643005498149-c7684a669bcf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHxfHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
+    name: "Cosmo-Reims",
+    desc: "Vodka Citron, Champagne Syrup, Cointreau, Lime, Cranberry.",
+    flavorProfile: "A high-class evolution of the Cosmopolitan. The addition of Champagne syrup elevates the cranberry's natural acidity, while a delicate mist of rose essence over the surface creates an enchanting olfactory experience.",
+    tastingNotes: ["Elegant", "Tart", "Floral", "Vibrant"]
   },
   {
     url: "https://images.unsplash.com/photo-1625608343997-d53dca75aa09?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwyfHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
-    name: "Crystal Clear",
-    desc: "Clarified Milk Punch, Pineapple, Rum, Coconut Water.",
-    flavorProfile: "A tropical escape refined through milk clarification, yielding a crystal-clear elixir with impossibly smooth texture. Bright pineapple and coconut transport you to paradise with every sip.",
-    tastingNotes: ["Tropical", "Silky", "Refreshing", "Clean"]
+    name: "Allorum Sour",
+    desc: "Gin, Allspice Syrup, Lemon, Egg White (or Aquafaba), Fresh Nutmeg.",
+    flavorProfile: "Spiced and silky. The powerful warmth of Allspice is expertly balanced against the botanical freshness of gin. A velvet-textured foam is topped with freshly grated nutmeg to echo the syrup’s aromatic depth.",
+    tastingNotes: ["Spiced", "Silky", "Warm", "Botanical"]
+  },
+  {
+    url: "https://images.unsplash.com/photo-1679685806190-7fd75c150c38?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4Nj01ODR8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
+    name: "Espresso Midnight",
+    desc: "Vodka or Dark Rum, Espresso, Coffee Liqueur, Sea Salt, Tonka Bean Syrup.",
+    flavorProfile: "A bold, modern Espresso Martini. A pinch of sea salt heightens the roasted coffee notes, while tonka bean syrup replaces standard sugar to introduce complex layers of vanilla and bitter almond.",
+    tastingNotes: ["Intense", "Roasted", "Savory", "Complex"]
   },
   {
     url: "https://images.unsplash.com/photo-1683027922895-8022e129ae08?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
-    name: "Nightshade",
-    desc: "Blackberry Liqueur, Vodka, Thyme, Lemon Twist.",
-    flavorProfile: "A mysterious garden-inspired creation where ripe blackberry meets aromatic thyme. The herbal complexity unfolds gradually, revealing layers of dark fruit and citrus brightness.",
-    tastingNotes: ["Fruity", "Herbal", "Dark", "Aromatic"]
+    name: "Rumshack",
+    desc: "Rum Blend, Raspberry & Passion Fruit Purée, Lemon, Fresh Mint.",
+    flavorProfile: "A refined crowd-pleaser that is both tropical and vibrant. A perfect balance of tart passion fruit and sweet raspberry, served with a fresh mint sprig rubbed on the rim for an immediate aromatic impact.",
+    tastingNotes: ["Tropical", "Fruity", "Fresh", "Zesty"]
   },
   {
     url: "https://images.unsplash.com/photo-1638022380139-00dd53630102?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
-    name: "Amber Old Fashioned",
-    desc: "Aged Rum, Maple Syrup, Angostura Bitters, Orange Peel.",
-    flavorProfile: "A sophisticated reimagining of the timeless classic. Aged rum brings caramel depth while pure maple syrup adds an autumnal sweetness, balanced by aromatic bitters and bright citrus oils.",
-    tastingNotes: ["Caramel", "Spiced", "Warm", "Balanced"]
+    name: "Golden Hive Fashioned",
+    desc: "Bourbon or Rye Whiskey, Honey Syrup, Angostura Bitters, Smoked Rosemary.",
+    flavorProfile: "A timeless classic reimagined with earthy, pastoral notes. Cold-diluted honey syrup melds with the warmth of the bourbon, while a smoked rosemary garnish adds a profound olfactory dimension.",
+    tastingNotes: ["Honeyed", "Smoky", "Robust", "Woody"]
   },
   {
     url: "https://images.unsplash.com/photo-1543924483-97317fc27712?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
-    name: "Gilded Cage",
-    desc: "Champagne, Elderflower St. Germain, Gold Dust.",
-    flavorProfile: "Pure celebration in a glass. Effervescent champagne lifts delicate elderflower notes while shimmering gold dust catches the light, creating an ethereal drinking experience fit for royalty.",
-    tastingNotes: ["Floral", "Effervescent", "Elegant", "Light"]
-  },
-  {
-    url: "https://images.unsplash.com/photo-1679685806190-7fd75c150c38?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
-    name: "Midnight Espresso",
-    desc: "Espresso, Kahlua, Vodka, Vanilla Bean.",
-    flavorProfile: "The perfect after-dinner indulgence. Freshly pulled espresso meets velvety Kahlua and smooth vodka, finished with real vanilla bean for a coffee experience that transcends the ordinary.",
-    tastingNotes: ["Coffee", "Sweet", "Creamy", "Bold"]
+    name: "Sakura Sake Martini",
+    desc: "Sake Junmai Ginjo, Roku Gin, Cherry or Lychee Syrup, Hibiscus Flower.",
+    flavorProfile: "Japanese minimalism in its purest form. The delicacy of Junmai Ginjo sake meets the unique botanicals of Roku Gin. A candied hibiscus flower rests at the bottom, offering an ethereal visual and a subtle sweet finish.",
+    tastingNotes: ["Delicate", "Floral", "Dry", "Sophisticated"]
   }
 ];
 
