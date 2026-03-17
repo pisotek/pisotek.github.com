@@ -13,7 +13,7 @@ const cocktails = [
     tastingNotes: ["Indulgent", "Bitter", "Roasted", "Citrus"]
   },
   {
-    url: "https://images.unsplash.com/photo-1643005497643-0c11084ca835?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwzfHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
+    url: "/cocktailimg/sunrise.png",
     name: "Mastiha Sunrise",
     desc: "Tequila Blanco, Mastiha Liqueur, Fresh Orange Juice, Hibiscus & Pomegranate Syrup.",
     flavorProfile: "The Mediterranean in a glass. The herbal notes of Mastiha resin pair perfectly with the earthy agave of the tequila. Complemented by a homemade hibiscus and pomegranate syrup for a deep ruby hue and a sophisticated floral finish.",
@@ -36,7 +36,7 @@ const cocktails = [
   {
     url: "/cocktailimg/espresso.png",
     name: "Espresso Midnight",
-    desc: "Vodka or Dark Rum, Espresso, Coffee Liqueur, Sea Salt, Tonka Bean Syrup.",
+    desc: "Dark Rum, Espresso, Coffee Liqueur, Sea Salt, Tonka Bean Syrup.",
     flavorProfile: "A bold, modern Espresso Martini. A pinch of sea salt heightens the roasted coffee notes, while tonka bean syrup replaces standard sugar to introduce complex layers of vanilla and bitter almond.",
     tastingNotes: ["Intense", "Roasted", "Savory", "Complex"]
   },
@@ -48,16 +48,16 @@ const cocktails = [
     tastingNotes: ["Tropical", "Fruity", "Fresh", "Zesty"]
   },
   {
-    url: "/cocktailimg/oldfashion.png",
+    url: "/cocktailimg/oldfash.png",
     name: "Golden Hive Fashioned",
-    desc: "Bourbon or Rye Whiskey, Honey Syrup, Angostura Bitters, Smoked Rosemary.",
+    desc: "Bourbon, Chestnut Honey Syrup, Angostura Bitters, Smoked Rosemary.",
     flavorProfile: "A timeless classic reimagined with earthy, pastoral notes. Cold-diluted honey syrup melds with the warmth of the bourbon, while a smoked rosemary garnish adds a profound olfactory dimension.",
     tastingNotes: ["Honeyed", "Smoky", "Robust", "Woody"]
   },
   {
-    url: "https://images.unsplash.com/photo-1543924483-97317fc27712?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
+    url: "/cocktailimg/sakemartini.png",
     name: "Sakura Sake Martini",
-    desc: "Sake Junmai Ginjo, Roku Gin, Cherry or Lychee Syrup, Hibiscus Flower.",
+    desc: "Sake Junmai Ginjo, Roku Gin, Lychee Syrup, Hibiscus Flower.",
     flavorProfile: "Japanese minimalism in its purest form. The delicacy of Junmai Ginjo sake meets the unique botanicals of Roku Gin. A candied hibiscus flower rests at the bottom, offering an ethereal visual and a subtle sweet finish.",
     tastingNotes: ["Delicate", "Floral", "Dry", "Sophisticated"]
   }
@@ -198,7 +198,7 @@ export const HomePage = () => {
             From intimate gatherings to grand celebrations, let&apos;s create an unforgettable 
             cocktail experience tailored to your vision.
           </p>
-          <a href="#/contact" className="btn-primary" data-testid="cta-contact-btn">
+          <a href="/contact" className="btn-primary" data-testid="cta-contact-btn">
             Get in Touch
           </a>
         </div>

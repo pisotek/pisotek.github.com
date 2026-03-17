@@ -224,7 +224,7 @@ export const ContactPage = () => {
                       <div>
                         <p className="text-[#666666] text-xs tracking-wider uppercase mb-1">Based In</p>
                         <p className="text-[#EDEDED]">Athens, Greece</p>
-                        <p className="text-[#A0A0A0] text-sm mt-1">Available for travel worldwide</p>
+                        <p className="text-[#A0A0A0] text-sm mt-1">Available for travel</p>
                       </div>
                     </div>
                   </div>

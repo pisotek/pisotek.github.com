@@ -205,10 +205,10 @@ export const CertificationsPage = () => {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {[
-              { number: '10+', label: 'Years Experience' },
-              { number: '500+', label: 'Events Served' },
-              { number: '50+', label: 'Original Recipes' },
-              { number: '6', label: 'Industry Awards' }
+              { number: '8+', label: 'Years Experience' },
+              { number: '250+', label: 'Events Served' },
+              { number: '15+', label: 'Team Member Trained' },
+              { number: '30+', label: 'Masterclasses Conducted' }
             ].map((stat, index) => (
               <div
                 key={stat.label}
