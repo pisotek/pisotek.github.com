@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { CocktailCard } from '../components/CocktailCard';
 import { CocktailModal } from '../components/CocktailModal';
+import { href } from 'react-router-dom';
 
 const cocktails = [
   {
-    url: "https://images.unsplash.com/photo-1773188243511-2eb85126f08b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHw0fHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
+    url: "/cocktailimg/chcolatenegroni.jpeg",
     name: "Chocolate Negroni",
     desc: "Cacao-infused Gin, Campari, Sweet Red Vermouth, Chocolate Bitters.",
     flavorProfile: "An indulgent reimagining of a classic. The gin is fat-washed or infused for 48 hours with toasted cacao nibs, delivering a deep dark chocolate aroma. Finished with a flamed orange peel to release essential oils that brighten the palate.",
@@ -19,35 +20,35 @@ const cocktails = [
     tastingNotes: ["Herbal", "Resinous", "Fresh", "Floral"]
   },
   {
-    url: "https://images.unsplash.com/photo-1643005498149-c7684a669bcf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHxfHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
+    url: "/cocktailimg/cosmo.jpeg",
     name: "Cosmo-Reims",
     desc: "Vodka Citron, Champagne Syrup, Cointreau, Lime, Cranberry.",
     flavorProfile: "A high-class evolution of the Cosmopolitan. The addition of Champagne syrup elevates the cranberry's natural acidity, while a delicate mist of rose essence over the surface creates an enchanting olfactory experience.",
     tastingNotes: ["Elegant", "Tart", "Floral", "Vibrant"]
   },
   {
-    url: "https://images.unsplash.com/photo-1625608343997-d53dca75aa09?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwyfHxmYW5jeSUyMGNvY2t0YWlsJTIwY2xvc2UlMjB1cCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzQ4MTIxNXww&ixlib=rb-4.1.0&q=85",
+    url: "/cocktailimg/allorum.png",
     name: "Allorum Sour",
     desc: "Gin, Allspice Syrup, Lemon, Egg White (or Aquafaba), Fresh Nutmeg.",
     flavorProfile: "Spiced and silky. The powerful warmth of Allspice is expertly balanced against the botanical freshness of gin. A velvet-textured foam is topped with freshly grated nutmeg to echo the syrup’s aromatic depth.",
     tastingNotes: ["Spiced", "Silky", "Warm", "Botanical"]
   },
   {
-    url: "https://images.unsplash.com/photo-1679685806190-7fd75c150c38?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4Nj01ODR8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
+    url: "/cocktailimg/espresso.png",
     name: "Espresso Midnight",
     desc: "Vodka or Dark Rum, Espresso, Coffee Liqueur, Sea Salt, Tonka Bean Syrup.",
     flavorProfile: "A bold, modern Espresso Martini. A pinch of sea salt heightens the roasted coffee notes, while tonka bean syrup replaces standard sugar to introduce complex layers of vanilla and bitter almond.",
     tastingNotes: ["Intense", "Roasted", "Savory", "Complex"]
   },
   {
-    url: "https://images.unsplash.com/photo-1683027922895-8022e129ae08?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
+    url: "/cocktailimg/rumshack.jpeg",
     name: "Rumshack",
     desc: "Rum Blend, Raspberry & Passion Fruit Purée, Lemon, Fresh Mint.",
     flavorProfile: "A refined crowd-pleaser that is both tropical and vibrant. A perfect balance of tart passion fruit and sweet raspberry, served with a fresh mint sprig rubbed on the rim for an immediate aromatic impact.",
     tastingNotes: ["Tropical", "Fruity", "Fresh", "Zesty"]
   },
   {
-    url: "https://images.unsplash.com/photo-1638022380139-00dd53630102?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBkYXJrJTIwY29ja3RhaWwlMjBnb2xkJTIwYWVzdGhldGljfGVufDB8fHx8MTc3MzQ4MTIwMnww&ixlib=rb-4.1.0&q=85",
+    url: "/cocktailimg/oldfashion.png",
     name: "Golden Hive Fashioned",
     desc: "Bourbon or Rye Whiskey, Honey Syrup, Angostura Bitters, Smoked Rosemary.",
     flavorProfile: "A timeless classic reimagined with earthy, pastoral notes. Cold-diluted honey syrup melds with the warmth of the bourbon, while a smoked rosemary garnish adds a profound olfactory dimension.",
