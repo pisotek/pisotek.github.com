@@ -20,7 +20,7 @@ const cocktails = [
     tastingNotes: ["Herbal", "Resinous", "Fresh", "Floral"]
   },
   {
-    url: "/cocktailimg/cosmo.jpeg",
+    url: "/cocktailimg/cosmo.png",
     name: "Cosmo-Reims",
     desc: "Vodka Citron, Champagne Syrup, Cointreau, Lime, Cranberry.",
     flavorProfile: "A high-class evolution of the Cosmopolitan. The addition of Champagne syrup elevates the cranberry's natural acidity, while a delicate mist of rose essence over the surface creates an enchanting olfactory experience.",
@@ -41,7 +41,7 @@ const cocktails = [
     tastingNotes: ["Intense", "Roasted", "Savory", "Complex"]
   },
   {
-    url: "/cocktailimg/rumshack.jpeg",
+    url: "/cocktailimg/rumshack.png",
     name: "Rumshack",
     desc: "Rum Blend, Raspberry & Passion Fruit Purée, Lemon, Fresh Mint.",
     flavorProfile: "A refined crowd-pleaser that is both tropical and vibrant. A perfect balance of tart passion fruit and sweet raspberry, served with a fresh mint sprig rubbed on the rim for an immediate aromatic impact.",
