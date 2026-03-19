@@ -26,7 +26,7 @@ const certifications = [
     type: 'science'
   },
   {
-    year: '2021',
+    year: '2022',
     title: 'Advanced Prep & Extraction Masterclass',
     organization: 'Ananas Academy',
     description: 'Mastery of advanced extraction techniques including fat-washing, rapid infusions, and artisanal cordial production.',
@@ -34,12 +34,20 @@ const certifications = [
     type: 'science'
   },
   {
-    year: '2020',
+    year: '2021',
     title: 'Flavor Architecture & Spirits Specialization',
     organization: 'Campari Academy',
     description: 'Deep-dive into botanical chemistry, fermentation variables, and the structural design of complex flavor profiles.',
     icon: FlaskConical,
     type: 'science'
+  },
+  {
+    year: '2021', // 
+    title: 'Food and Wine Pairing', // 
+    organization: 'The State University of New York', // 
+    description: 'Comprehensive study of culinary and viticultural synergy, exploring flavor profiles and pairing dynamics.',
+    icon: Wine,
+    type: 'basic'
   },
   {
     year: '2020',

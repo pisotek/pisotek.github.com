@@ -1,7 +1,7 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
-import { PasswordGate } from "./components/PasswordGate";
+
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -11,7 +11,7 @@ import { ContactPage } from "./pages/ContactPage";
 
 function App() {
   return (
-    <PasswordGate>
+    
       <div className="App min-h-screen bg-[#0A0A0A]">
         <BrowserRouter>
           <ScrollToTop />
@@ -34,7 +34,7 @@ function App() {
           }}
         />
       </div>
-    </PasswordGate>
+    
   );
 }
 

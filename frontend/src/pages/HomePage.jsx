@@ -93,7 +93,7 @@ export const HomePage = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1729863254208-2fdc172a0bc6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBiYXJ0ZW5kZXIlMjBwb3VyaW5nJTIwY29ja3RhaWwlMjBkYXJrJTIwbW9vZHxlbnwwfHx8fDE3NzM0ODEyMDR8MA&ixlib=rb-4.1.0&q=85"
+            src="/cocktailimg/backgrond.jpg"
             alt="Professional bartender crafting a cocktail"
             className="w-full h-full object-cover"
             loading="eager"

@@ -91,13 +91,14 @@
 /* Navbar */
 .nav-link {
   position: relative;
-  color: var(--text-secondary);
+  color: #EDEDED;
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: 640;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-decoration: none;
   transition: color 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .nav-link:hover {
@@ -127,6 +128,18 @@
   width: 100%;
 }
 
+.navbar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  /* Dark tint with high blur for maximum legibility */
+  background: rgba(10, 10, 10, 0.6); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
 /* Hero Section */
 .hero-bg {
   position: relative;
@@ -137,7 +150,11 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.7) 50%, #0A0A0A 100%);
+  background: linear-gradient(to bottom, 
+    rgba(10, 10, 10, 0.6) 0%, 
+    rgba(10, 10, 10, 0.2) 20%, 
+    rgba(10, 10, 10, 0.8) 100%
+  );
   z-index: 1;
 }
 
