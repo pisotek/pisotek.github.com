@@ -1,63 +1,71 @@
-import { Award, GraduationCap, Trophy, Star } from 'lucide-react';
+import { BookOpen, FlaskConical, Wine } from 'lucide-react';
 
 const certifications = [
   {
-    year: '2024',
-    title: 'Certified Master Mixologist',
-    organization: 'International Bartenders Association',
-    description: 'Achieved the highest level of professional certification in mixology, demonstrating mastery in classic and contemporary cocktail techniques.',
-    icon: Trophy,
-    type: 'certification'
+    year: '2025',
+    title: 'F/B Strategy And Revenue Credential',
+    organization: 'Università Bocconi',
+    description: 'Advanced mastery of menu engineering, financial brand positioning, and consumer behavior analysis within the hospitality sector.',
+    icon: BookOpen,
+    type: 'businness'
+  },
+  {
+    year: '2025',
+    title: 'Hospitality Leadership Qualification',
+    organization: 'University of North Texas',
+    description: 'Expertise in organizational leadership, team dynamics, and operational system design for high-pressure hospitality environments.',
+    icon: BookOpen,
+    type: 'businness'
   },
   {
     year: '2023',
-    title: 'Best Innovation in Cocktails',
-    organization: 'World Cocktail Awards',
-    description: 'Recognized for the creation of the "Obsidian Martini" - a groundbreaking cocktail featuring activated charcoal and molecular gastronomy techniques.',
-    icon: Award,
-    type: 'award'
-  },
-  {
-    year: '2023',
-    title: 'Advanced Spirits & Sommelier',
-    organization: 'Wine & Spirit Education Trust (WSET)',
-    description: 'Level 3 certification in spirits, covering production methods, flavor profiles, and expert-level tasting skills.',
-    icon: GraduationCap,
-    type: 'certification'
-  },
-  {
-    year: '2022',
-    title: 'Molecular Mixology Workshop',
-    organization: 'The Aviary, Chicago',
-    description: 'Intensive two-week workshop with world-renowned mixologists, focusing on spherification, foams, and aromatic presentations.',
-    icon: Star,
-    type: 'workshop'
+    title: 'Molecular Mixology Technical Intensive',
+    organization: 'Elevify',
+    description: 'Technical focus on liquid stability, Brix-level precision, and the application of molecular physics in cocktail architecture.',
+    icon: FlaskConical,
+    type: 'science'
   },
   {
     year: '2021',
-    title: 'Rising Star Bartender',
-    organization: 'Tales of the Cocktail Foundation',
-    description: 'Named among the top 10 emerging talents in the global bartending industry for exceptional creativity and technique.',
-    icon: Award,
-    type: 'award'
+    title: 'Advanced Prep & Extraction Masterclass',
+    organization: 'Ananas Academy',
+    description: 'Mastery of advanced extraction techniques including fat-washing, rapid infusions, and artisanal cordial production.',
+    icon: FlaskConical,
+    type: 'science'
   },
   {
     year: '2020',
-    title: 'Professional Bartending Certificate',
-    organization: 'European Bartender School',
-    description: 'Four-week intensive program covering speed bartending, flair techniques, and bar management fundamentals.',
-    icon: GraduationCap,
-    type: 'certification'
+    title: 'Flavor Architecture & Spirits Specialization',
+    organization: 'Campari Academy',
+    description: 'Deep-dive into botanical chemistry, fermentation variables, and the structural design of complex flavor profiles.',
+    icon: FlaskConical,
+    type: 'science'
+  },
+  {
+    year: '2020',
+    title: 'Sustainable Operations Designation',
+    organization: 'Pernod Ricard',
+    description: 'Implementation of zero-waste systems, closed-loop bar operations, and sustainable resource management protocols.',
+    icon: Wine,
+    type: 'basic'
+  },
+  {
+    year: '2019',
+    title: 'Global Spirits Accreditation',
+    organization: 'Diageo Bar Academy',
+    description: 'Validation of global industry standards in spirit category knowledge, service excellence, and professional operational protocols.',
+    icon: Wine,
+    type: 'basic'
   }
 ];
 
 const getTypeColor = (type) => {
   switch (type) {
-    case 'award':
+    case 'basic':
       return 'bg-[#D4AF37]/20 text-[#D4AF37]';
-    case 'certification':
+    case 'science':
       return 'bg-emerald-500/20 text-emerald-400';
-    case 'workshop':
+    case 'businness':
       return 'bg-blue-500/20 text-blue-400';
     default:
       return 'bg-[#D4AF37]/20 text-[#D4AF37]';
@@ -66,12 +74,12 @@ const getTypeColor = (type) => {
 
 const getTypeLabel = (type) => {
   switch (type) {
-    case 'award':
-      return 'Award';
-    case 'certification':
-      return 'Certification';
-    case 'workshop':
-      return 'Workshop';
+    case 'basic':
+      return 'Standards';
+    case 'science':
+      return 'Technical';
+    case 'businness':
+      return 'Management'
     default:
       return type;
   }

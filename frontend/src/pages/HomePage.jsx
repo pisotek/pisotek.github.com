@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { CocktailCard } from '../components/CocktailCard';
 import { CocktailModal } from '../components/CocktailModal';
-import { href } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const cocktails = [
   {
@@ -198,9 +198,9 @@ export const HomePage = () => {
             From intimate gatherings to grand celebrations, let&apos;s create an unforgettable 
             cocktail experience tailored to your vision.
           </p>
-          <a href="/contact" className="btn-primary" data-testid="cta-contact-btn">
+          <Link to="/contact" className="btn-primary" >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </section>
 
