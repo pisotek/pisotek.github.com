@@ -34,7 +34,7 @@ export const Footer = () => {
               <Instagram size={18} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/alessiopisoni/"
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon"
